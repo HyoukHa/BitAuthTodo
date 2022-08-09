@@ -4,6 +4,7 @@ import com.bitcamp.AuthTodo.dto.ResponseDTO;
 import com.bitcamp.AuthTodo.dto.TodoDTO;
 import com.bitcamp.AuthTodo.model.TodoEntity;
 import com.bitcamp.AuthTodo.service.TodoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping(value = "/api/todo")
 public class TodoController {
