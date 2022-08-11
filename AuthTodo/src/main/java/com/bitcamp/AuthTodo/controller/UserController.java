@@ -74,7 +74,9 @@ public class UserController {
 
     @PostMapping(value = "/signin")
     public ResponseEntity<?> auth(@RequestBody UserDTO userDTO) {
+        System.out.println(userDTO);
         UserEntity user = userService.auth(userDTO.getUsername(), userDTO.getPassword(), passwordEncoder);
+
         System.out.println(user.getPassword());
 
         if(user != null) {
@@ -89,6 +91,7 @@ public class UserController {
             return ResponseEntity.ok().body(responseUserDTO);
         }else {
             ResponseDTO responseDTO = ResponseDTO.builder().error("login failed").build();
+            System.out.println("flag1");
             return ResponseEntity.badRequest().body(responseDTO);
         }
 

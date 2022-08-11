@@ -6,7 +6,7 @@ import { List, Paper } from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from './server.config';
-
+import NavBar from "./integrated/NavBar";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -53,6 +53,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Container maxWidth="md">
         <AddTodo addItem={addItem} />
         <Paper style={{ margin: 16 }}>

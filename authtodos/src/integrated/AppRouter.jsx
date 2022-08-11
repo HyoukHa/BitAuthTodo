@@ -1,0 +1,26 @@
+import React from 'react'
+import Copyright from './Copyright'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import App from '../App'
+import SignIn from './SignIn'
+import SignUp from './SignUp'
+import { Box } from '@mui/system'
+
+function AppRouter() {
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='/signup' element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+      <Box mt={5}>
+        <Copyright />
+      </Box>
+    </div>
+  )
+}
+
+export default AppRouter
